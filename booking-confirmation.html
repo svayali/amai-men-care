@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You - Amai Men Care</title>
+    <style>
+        body {
+            margin: 0; font-family: 'Arial', sans-serif; background-color: #000; color: #fff;
+        }
+        header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: #111; padding: 1rem 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+            z-index: 1000;
+        }
+        .logo img { height: 40px; }
+        nav ul {
+            list-style: none; display: flex; gap: 1rem;
+            margin: 0; padding: 0;
+        }
+        nav a { color: #fff; text-decoration: none; font-weight: bold; }
+
+        .booking-container {
+            padding-top: 120px; max-width: 600px; margin: auto;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem; margin-bottom: 0.5rem;
+            display: flex; justify-content: center; align-items: center; gap: 0.5rem;
+        }
+        svg {
+            width: 40px; height: 40px; stroke: #eab308;
+        }
+        p {
+            font-size: 1.1rem; line-height: 1.7;
+        }
+        .btn-primary {
+            display: inline-block; margin-top: 2rem;
+            background-color: #eab308; color: #000;
+            padding: 0.75rem 1.5rem; font-weight: bold;
+            border-radius: 4px; text-decoration: none;
+        }
+        .btn-primary:hover {
+            background-color: #ca9100;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">
+        <a href="/"><img src="amai-logo-2.png" alt="Amai Logo" /></a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/booking/select-service.html">Book</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Main Confirmation -->
+<main class="booking-container">
+    <h1>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </svg>
+        Thank You!
+    </h1>
+    <p>Your appointment has been confirmed.</p>
+    <p>
+        We’ve sent a confirmation mail to
+        <strong><span id="user-email">your@email.com</span></strong>.
+        Please check your inbox (and spam folder).
+    </p>
+    <a href="/" class="btn-primary">Back to Home</a>
+</main>
+
+<script>
+    // Inject email from query string
+    const urlParams = new URLSearchParams(location.search);
+    const userEmail = urlParams.get('email');
+    if (userEmail) {
+        document.getElementById('user-email').textContent = userEmail;
+    }
+</script>
+
+</body>
+</html>

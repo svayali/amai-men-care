@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amai Men Care Barber Shop</title>
+  <meta name="description" content="Amai Men Care – Premier barber shop appointments & haircut tracking."/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Flowbite JS -->
+  <script src="https://unpkg.com/flowbite@2.3.0/dist/flowbite.min.js"></script>
+
+  <style>
+    body { font-family: Arial, sans-serif; color: #222; line-height: 1.5; }
+    a { color: inherit; text-decoration: none; }
+    .hero {
+      margin-top: 80px;
+      padding: 4rem 2rem;
+      background: #030000;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 3rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero-img {
+      flex: 1 1 350px;
+      max-width: 350px;
+    }
+    .hero-img img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 8px 40px rgba(2, 28, 56, 0.10);
+    }
+    .hero-text {
+      flex: 2;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1.25rem;
+    }
+    .hero-text p {
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+      color: #22334a;
+    }
+    .book-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-radius: 0.25rem;
+      border: 1px solid #6366f1;
+      background: #6366f1;
+      color: #fff;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .book-btn:hover {
+      background: transparent;
+      color: #6366f1;
+    }
+    .book-btn svg {
+      width: 1.3rem;
+      height: 1.3rem;
+      vertical-align: middle;
+      transition: fill 0.2s;
+    }
+    .features {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem; padding: 4rem 2rem;
+    }
+    .feature-item {
+      text-align: center;
+      padding: 2rem 1rem; border: 1px solid #eee; border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .feature-item img { height: 60px; margin-bottom: 1rem; }
+    .about {
+      display: flex; flex-wrap: wrap; align-items: center;
+      gap: 2rem; padding: 4rem 2rem;
+    }
+    .about .about-img { flex: 1; min-width: 280px; }
+    .about .about-img img { width: 100%; border-radius: 8px; }
+    .about .about-text { flex: 1; min-width: 280px; }
+    .gallery {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem; padding: 4rem 2rem;
+    }
+    .gallery img { width: 100%; border-radius: 4px; }
+    .testimonials {
+      background: #070101; padding: 4rem 2rem;
+      text-align: center;
+    }
+    .testimonial-item {
+      max-width: 600px; margin: 0 auto 2rem;
+      font-style: italic; color: #555;
+    }
+    .contact {
+      padding: 4rem 2rem; background: #fff; text-align: center;
+    }
+    .contact form { max-width: 500px; margin: 0 auto; display: grid; gap: 1rem; }
+    .contact input, .contact textarea {
+      width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px;
+    }
+    .contact button {
+      background: #4b0606; color: #fff; padding: 0.75rem;
+      border: none; border-radius: 4px; font-weight: 600;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .contact button:hover { background: #330303; }
+    .site-footer {
+      background: #222; color: #fff; padding: 2rem; text-align: center;
+    }
+  </style>
+</head>
+<body>
+<!-- FLOWBITE NAVBAR START -->
+<nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="amai-logo-2.png" class="h-8" alt="Amai Men Care Logo">
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Amai Men Care</span>
+    </a>
+    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+      <a href="booking.html"
+         class="text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-indigo-500 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">
+        Book Appointment
+      </a>
+      <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+      </button>
+    </div>
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          <a href="#hero" class="block py-2 px-3 text-white bg-indigo-600 rounded md:bg-transparent md:text-indigo-600 md:p-0 md:dark:text-indigo-500" aria-current="page">Home</a>
+        </li>
+        <li>
+          <a href="#about" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+        </li>
+        <li>
+          <a href="#services" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+        </li>
+        <li>
+          <a href="#gallery" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Gallery</a>
+        </li>
+        <li>
+          <a href="#contact" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-indigo-600 md:p-0 md:dark:hover:text-indigo-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-img">
+      <img src="backroun3.jpg" alt="Barber at work"/>
+    </div>
+    <div class="hero-text">
+      <h1 class="text-5xl font-bold">Welcome!</h1>
+      <p>
+        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+        quasi. In deleniti eaque aut repudiandae et a id nisi.
+      </p>
+      <a
+              class="book-btn"
+              href="booking.html"
+      >
+        <span class="text-sm font-medium">Book Appointment</span>
+        <svg
+                class="size-5 shadow-sm rtl:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+        >
+          <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Services/Features -->
+<section class="features" id="services">
+  <div class="feature-item">
+    <img src="icons/beard.svg" alt="">
+    <h3>Haircuts</h3>
+    <p>Classic, modern, fades—tailored to your style.</p>
+  </div>
+  <div class="feature-item">
+    <img src="icons/beard.svg" alt="">
+    <h3>Beard Grooming</h3>
+    <p>Trims, shapes, and hot towel treatments.</p>
+  </div>
+  <div class="feature-item">
+    <img src="icons/shave.svg" alt="">
+    <h3>Straight Razor Shave</h3>
+    <p>Luxury straight-razor finish with soothing balm.</p>
+  </div>
+  <div class="feature-item">
+    <img src="icons/style.svg" alt="">
+    <h3>Styling & Packages</h3>
+    <p>Complete grooming packages for a polished look.</p>
+  </div>
+</section>
+
+<!-- About -->
+<section class="about" id="about" style="background: #000; color: #fff; padding: 6rem 0;">
+  <div style="
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      gap: 3rem;
+      justify-content: center;
+      ">
+    <!-- Image side -->
+    <div style="
+      flex: 1 1 350px;
+      display: flex;
+      justify-content: center;
+      ">
+      <img
+              src="backround 1.jpg"
+              alt="Barber at work"
+              style="
+          width: 330px;
+          height: 420px;
+          object-fit: cover;
+          border-radius: 1.5rem;
+          box-shadow: 0 6px 24px rgba(30,30,30,0.5);
+          background: #021C38FF;
+          border: 2px solid #021C38FF;
+        "
+      />
+    </div>
+    <!-- Text side -->
+    <div style="flex: 1 1 370px; min-width: 300px;">
+      <h2 style="font-size: 2.3rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.5px;">
+        About Amai Men Care
+      </h2>
+      <p style="font-size: 1.13rem; color: #e5e7eb; line-height: 1.8; font-weight: 400;">
+        Located in the heart of Istanbul, Amai Men Care combines old-world barber traditions with modern luxury.<br><br>
+        <span style="color: #facc15;">Our master barbers</span> use only the finest clippers, shears, and styling products to craft your perfect look.<br><br>
+        Enjoy complimentary coffee, Wi-Fi, and a relaxed atmosphere designed for the modern gentleman.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery" id="gallery">
+  <img src="gallery1.jpg" alt="Cut 1">
+  <img src="gallery2.jpg" alt="Cut 2">
+  <img src="gallery3.jpg" alt="Cut 3">
+  <img src="gallery4.jpg" alt="Cut 4">
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <h2>What Our Clients Say</h2>
+  <p class="testimonial-item">
+    "Best barbershop in Istanbul—truly five stars. The fade was perfect and the hot
+    towel shave was incredible!"
+  </p>
+  <p class="testimonial-item">
+    "The vibe is unmatched, and they really take time to craft a style that suits me."
+  </p>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <h2>Get in Touch</h2>
+  <form>
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-wrapper">
+    <div class="footer-col">
+      <a href="/" class="footer-logo">
+        <img src="amai-logo-2.png" alt="Amai Men Care Logo" />
+      </a>
+      <p class="footer-text">
+        Amai Men Care – Luxury barber experience in the heart of Istanbul.
+        Precision cuts, premium grooming, and artisan coffee.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>123 Main Street, Istanbul</p>
+      <p>+90 555 123 4567</p>
+      <p><a href="mailto:info@amaimencare.com">info@amaimencare.com</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Stay Connected</h4>
+      <form class="footer-newsletter" action="#" method="POST">
+        <input type="email" name="email" placeholder="Your email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><img src="icons/facebook.svg" alt=""></a>
+        <a href="#" aria-label="Instagram"><img src="icons/instagram.svg" alt=""></a>
+        <a href="#" aria-label="Twitter"><img src="icons/twitter.svg" alt=""></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Amai Men Care. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

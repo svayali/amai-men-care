@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Select Date & Time - Amai Men Care</title>
+    <style>
+        body {
+            margin: 0; font-family: 'Arial', sans-serif; background-color: #000; color: #fff;
+        }
+        header {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: #111; padding: 1rem 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+            z-index: 1000;
+        }
+        .logo img { height: 40px; }
+        nav ul { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
+        nav a { color: #fff; text-decoration: none; font-weight: bold; }
+        main { padding-top: 100px; max-width: 600px; margin: auto; }
+        .card {
+            background: #1a1a1a; padding: 2rem; border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+        }
+        h1 { text-align: center; margin-bottom: 1rem; }
+        button {
+            margin-top: 1rem; padding: 0.75rem 1.5rem;
+            background-color: #eab308; color: #000; font-weight: bold;
+            border-radius: 4px; border: none; cursor: pointer;
+        }
+        button:hover { background-color: #ca9100; }
+        label, input { display: block; margin: 0.5rem 0; width: 100%; }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo"><a href="/"><img src="amai-logo-2.png" alt="Amai Logo" /></a></div>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/booking/select-service.html">Book</a></li>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div class="card">
+        <h1>Select Date & Time</h1>
+        <label for="datetime">Choose a date and time:</label>
+        <input type="datetime-local" id="datetime" />
+        <a href="booking-step4.html"><button>Next</button></a>
+    </div>
+</main>
+</body>
+</html>
